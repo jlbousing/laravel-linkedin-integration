@@ -49,7 +49,25 @@ LINKEDIN_LEARNING_API_URL=your_api_url
 
 # Uso
 
-1. Obtener un Token de Acceso
+1. Instalar el proyecto usando el repositorio remoto de github:
+```php
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../ruta/de/tu/paquete",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "jlbousing/laravel-linkedin-learning": "*"
+    }
+}
+```
+
+2. Obtener un Token de Acceso
    Para obtener un token de acceso, puedes usar el método getAccessToken del servicio LinkedinLearningService:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
@@ -74,7 +92,7 @@ class SomeController extends Controller
     }
 }
 ```
-2. Buscar en el Catálogo de Cursos
+3. Buscar en el Catálogo de Cursos
    Para buscar en el catálogo de cursos, usa el método getAllCatalog:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
@@ -109,7 +127,7 @@ class SomeController extends Controller
     }
 }
 ```
-3. Obtener Detalles de un Recurso
+4. Obtener Detalles de un Recurso
    Para obtener detalles de un recurso específico, usa el método getAssetDetail:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
