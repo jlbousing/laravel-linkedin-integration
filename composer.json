@@ -1,0 +1,29 @@
+{
+  "name": "jlbousing/laravel-linkedin-learning",
+  "description": "Package for Laravel to integrate Linkedin Learning API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jorge Luis Bou-saad",
+      "email": "jbousing@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.2",
+    "illuminate/support": "^8.0|^9.0|^10.0",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jlbousing\\LaravelLinkedinLearning\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jlbousing\\LaravelLinkedinLearning\\Providers\\LinkedinLearningServiceProvider"
+      ]
+    }
+  }
+}
