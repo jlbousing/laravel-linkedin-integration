@@ -3,36 +3,36 @@
 [![Latest Version](https://img.shields.io/packagist/v/jlbousing/laravel-linkedin-learning.svg?style=flat-square)](https://packagist.org/packages/jlbousing/laravel-linkedin-learning)
 [![License](https://img.shields.io/packagist/l/jlbousing/laravel-linkedin-learning.svg?style=flat-square)](https://packagist.org/packages/jlbousing/laravel-linkedin-learning)
 
-Este paquete proporciona una integración sencilla con la API de LinkedIn Learning para proyectos Laravel. Con este paquete, puedes obtener tokens de acceso, buscar en el catálogo de cursos y obtener detalles de los recursos de aprendizaje.
+This package provides an easy integration with the LinkedIn Learning API for Laravel projects. With this package, you can obtain access tokens, search the course catalog, and retrieve details of learning assets.
 
 ---
 
 ## Requisitos
 
-- PHP 7.4 o superior.
-- Laravel 8.x, 9.x o 10.x.
-- Credenciales de la API de LinkedIn Learning (`client_id`, `client_secret` y `api_url`).
+- PHP 7.4 or higher.
+- Laravel 8.x, 9.x, or 10.x
+- LinkedIn Learning API credentials (client_id, client_secret, and api_url).
 
 ---
 
-## Instalación
+## Installation
 
-Puedes instalar el paquete a través de Composer:
+You can install the package via Composer:
 
 ```bash
 composer require jlbousing/laravel-linkedin-learning
 ```
 
-# Configuración
+# Configuration
 
-Publica el archivo de configuración del paquete
+Publish the package configuration file:
 
 ```bash
 php artisan vendor:publish --provider="Jlbousing\LaravelLinkedinLearning\Providers\LinkedinLearningServiceProvider" --tag="config"
 ```
-Esto creará un archivo de configuración en config/linkedin-learning.php.
+This will create a configuration file at config/linkedin-learning.php.
 
-Actualiza el archivo de configuración con tus credenciales de LinkedIn Learning:
+Update the configuration file with your LinkedIn Learning credentials:
 ```bash
 return [
     'client_id' => env('LINKEDIN_LEARNING_CLIENT_ID'),
@@ -40,16 +40,16 @@ return [
     'api_url' => env('LINKEDIN_LEARNING_API_URL'),
 ];
 ```
-Asegúrate de agregar las siguientes variables de entorno en tu archivo .env:
+Make sure to add the following environment variables to your .env file:
 ```bash
 LINKEDIN_LEARNING_CLIENT_ID=your_client_id
 LINKEDIN_LEARNING_CLIENT_SECRET=your_client_secret
 LINKEDIN_LEARNING_API_URL=your_api_url
 ```
 
-# Uso
+# Usage
 
-1. Instalar el proyecto usando el repositorio remoto de github:
+1. Install the project using the remote GitHub repository:
 ```php
 {
     "repositories": [
@@ -67,8 +67,8 @@ LINKEDIN_LEARNING_API_URL=your_api_url
 }
 ```
 
-2. Obtener un Token de Acceso
-   Para obtener un token de acceso, puedes usar el método getAccessToken del servicio LinkedinLearningService:
+2. Obtain an Access Token
+To obtain an access token, use the getAccessToken method from the LinkedinLearningService:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
 
@@ -92,8 +92,8 @@ class SomeController extends Controller
     }
 }
 ```
-3. Buscar en el Catálogo de Cursos
-   Para buscar en el catálogo de cursos, usa el método getAllCatalog:
+3. Search the Course Catalog
+To search the course catalog, use the getAllCatalog method:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
 use Jlbousing\LaravelLinkedinLearning\DTO\CatalogSearchDTO;
@@ -127,8 +127,8 @@ class SomeController extends Controller
     }
 }
 ```
-4. Obtener Detalles de un Recurso
-   Para obtener detalles de un recurso específico, usa el método getAssetDetail:
+4. Get Asset Details
+To get details of a specific asset, use the getAssetDetail method:
 ```php
 use Jlbousing\LaravelLinkedinLearning\Services\LinkedinLearningService;
 use Jlbousing\LaravelLinkedinLearning\DTO\AssetDetailDTO;
@@ -159,7 +159,7 @@ class SomeController extends Controller
 }
 ```
 
-# Ejemplos de DTO
+# DTO Examples
 CatalogSearchDTO
 
 ```php
@@ -199,23 +199,23 @@ $assetDetailDTO = new AssetDetailDTO([
 ]);
 ```
 
-# Registro de Errores
-El paquete utiliza el sistema de registro de Laravel (Log) para registrar errores. Puedes encontrar los registros en storage/logs/laravel.log.
+# Error Logging
+The package uses Laravel's logging system to record errors. You can find the logs in storage/logs/laravel.log.
 
-# Contribuciones
-Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+# Contributions
+If you would like to contribute to this project, please follow these steps:
 
-Haz un fork del repositorio.
+Fork the repository.
 
-Crea una rama para tu nueva funcionalidad (git checkout -b feature/nueva-funcionalidad).
+Create a branch for your new feature (git checkout -b feature/new-feature)
 
-Realiza tus cambios y haz commit (git commit -am 'Agrega nueva funcionalidad').
+Make your changes and commit them (git commit -am 'Add new feature').
 
-Haz push a la rama (git push origin feature/nueva-funcionalidad).
+Push to the branch (git push origin feature/new-feature).
 
-Abre un Pull Request.
+Open a Pull Request.
 
-¡Gracias por usar jlbousing/laravel-linkedin-learning! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue en el repositorio.
+Thank you for using jlbousing/laravel-linkedin-learning! If you have any questions or suggestions, feel free to open an issue in the repository.
 
 ```bash
 
